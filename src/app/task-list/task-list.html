@@ -1,0 +1,24 @@
+<h2>Task List</h2>
+
+@for (task of todoService.tasks(); track task.id) {
+
+  <div >
+
+    <h3>{{ task.title }}</h3>
+
+    <p>{{ task.description }}</p>
+
+    <p>
+      Status:
+      {{ task.completed ? 'Completed' : 'Pending' }}
+    </p>
+
+    <button [routerLink]="['/task',task.id]">View</button>
+    <button [routerLink]="['/edit',task.id]">Edit</button>
+    <button (click)="deleteTask(task.id)">Delete</button>
+
+    <hr>
+
+  </div>
+
+}

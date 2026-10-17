@@ -1,0 +1,22 @@
+<h2>Task Details</h2>
+
+@if (task) {
+
+  <div class="task-details">
+
+    <h3>{{ task.title }}</h3>
+
+    <p>{{ task.description }}</p>
+
+    <p>
+      Status:
+      {{ task.completed ? 'Completed' : 'Pending' }}
+    </p>
+
+  </div>
+
+} @else {
+
+  <p>Task not found.</p>
+
+}
